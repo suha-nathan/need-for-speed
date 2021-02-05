@@ -1,0 +1,173 @@
+fonts, body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: rgba(0, 0, 255, 0.4) center;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 15px red;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 15px red;
+  }
+}
+#score-div {
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-size: 25px;
+  background-color: white;
+  color: #454545;
+  padding: 15px;
+  box-shadow: 4px 4px 4px 1px #808080;
+  -webkit-box-shadow: 4px 4px 4px 1px #808080;
+}
+#score-div p {
+  height: 20px;
+}
+
+.container {
+  width: 40%;
+  height: 100vh;
+  left: 35%;
+  background: #333;
+  overflow: hidden;
+  position: relative;
+}
+.container .line {
+  width: 4%;
+  height: 30vh;
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  margin-left: 48%;
+}
+.container #line-1 {
+  top: -150px;
+}
+.container #line-2 {
+  top: 150px;
+}
+.container #line-3 {
+  top: 450px;
+}
+
+onlyPlayer, #car-player {
+  box-shadow: 3px 3px 3px;
+  animation: blink 3s linear infinite;
+  top: 60%;
+  left: 60%;
+  background: red;
+  bottom: 10px;
+}
+
+allCars, #car-3, #car-2, #car-1, #car-player {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  border-radius: 5px;
+}
+allCars .f-glass, #car-3 .f-glass, #car-2 .f-glass, #car-1 .f-glass, #car-player .f-glass, allCars .b-glass, #car-3 .b-glass, #car-2 .b-glass, #car-1 .b-glass, #car-player .b-glass {
+  width: 60%;
+  height: 20%;
+  background: #484848;
+  position: absolute;
+  margin-left: 20%;
+}
+allCars .f-glass, #car-3 .f-glass, #car-2 .f-glass, #car-1 .f-glass, #car-player .f-glass {
+  top: 15px;
+  border-radius: 5px 5px 0 0;
+}
+allCars .b-glass, #car-3 .b-glass, #car-2 .b-glass, #car-1 .b-glass, #car-player .b-glass {
+  bottom: 15px;
+  border-radius: 0 0 5px 5px;
+}
+allCars .f-light-l, #car-3 .f-light-l, #car-2 .f-light-l, #car-1 .f-light-l, #car-player .f-light-l, allCars .f-light-r, #car-3 .f-light-r, #car-2 .f-light-r, #car-1 .f-light-r, #car-player .f-light-r {
+  position: absolute;
+  width: 20%;
+  height: 10%;
+  background: #efefef;
+  top: -6%;
+  margin-left: 10%;
+  border-radius: 5px 5px 0 0;
+}
+allCars .f-light-r, #car-3 .f-light-r, #car-2 .f-light-r, #car-1 .f-light-r, #car-player .f-light-r {
+  margin-left: 70%;
+}
+allCars .f-tyre-l, #car-3 .f-tyre-l, #car-2 .f-tyre-l, #car-1 .f-tyre-l, #car-player .f-tyre-l, allCars .f-tyre-r, #car-3 .f-tyre-r, #car-2 .f-tyre-r, #car-1 .f-tyre-r, #car-player .f-tyre-r, allCars .b-tyre-l, #car-3 .b-tyre-l, #car-2 .b-tyre-l, #car-1 .b-tyre-l, #car-player .b-tyre-l, allCars .b-tyre-r, #car-3 .b-tyre-r, #car-2 .b-tyre-r, #car-1 .b-tyre-r, #car-player .b-tyre-r {
+  position: absolute;
+  height: 20%;
+  width: 10%;
+  background: grey;
+}
+allCars .f-tyre-l, #car-3 .f-tyre-l, #car-2 .f-tyre-l, #car-1 .f-tyre-l, #car-player .f-tyre-l {
+  top: 20%;
+  left: -10%;
+  border-radius: 5px 0 0 5px;
+}
+allCars .f-tyre-r, #car-3 .f-tyre-r, #car-2 .f-tyre-r, #car-1 .f-tyre-r, #car-player .f-tyre-r {
+  top: 20%;
+  left: 100%;
+  border-radius: 0 5px 5px 0;
+}
+allCars .b-tyre-r, #car-3 .b-tyre-r, #car-2 .b-tyre-r, #car-1 .b-tyre-r, #car-player .b-tyre-r {
+  bottom: 20%;
+  left: 100%;
+  border-radius: 0 5px 5px 0;
+}
+allCars .b-tyre-l, #car-3 .b-tyre-l, #car-2 .b-tyre-l, #car-1 .b-tyre-l, #car-player .b-tyre-l {
+  bottom: 20%;
+  left: -10%;
+  border-radius: 5px 0 0 5px;
+}
+
+#car-1 {
+  top: -100%;
+  left: 20%;
+  background: blue;
+}
+
+#car-2 {
+  top: -200%;
+  left: 40%;
+  background: green;
+}
+
+#car-3 {
+  top: -350%;
+  left: 45%;
+  background: yellow;
+}
+
+#restart-div {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #292929;
+  line-height: 100vh;
+  display: none;
+}
+#restart-div #restart {
+  display: block;
+  width: 50%;
+  height: 80px;
+  background: #8a64ff;
+  color: #fff;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  margin-left: 20%;
+  margin-top: 50%;
+}
+
+/*# sourceMappingURL=styles.css.map */

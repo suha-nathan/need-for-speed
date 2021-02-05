@@ -1,0 +1,13 @@
+fonts{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  height:100%;
+  width:100%;
+  margin:0;
+  @extend fonts;
+  background: rgba(0, 0, 255, 0.4) center;
+
+}
+

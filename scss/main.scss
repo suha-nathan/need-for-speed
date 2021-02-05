@@ -1,0 +1,178 @@
+@import "general";
+@import "colors";
+
+
+
+//.line{
+//  background-color: grey;
+//  height: 100px;
+//  width:20px;
+//}
+@keyframes blink {
+  0% { box-shadow: 0 0 15px red; }
+  50% { box-shadow: none; }
+  100% { box-shadow: 0 0 15px red; }
+}
+
+#score-div{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-size:25px;
+  background-color: white;
+  color: #454545;
+  padding:15px;
+  box-shadow: 4px 4px 4px 1px #808080;
+  -webkit-box-shadow: 4px 4px 4px 1px #808080;
+  p{
+    height:20px;
+  }
+}
+
+//styling the road now
+
+.container{
+  width:40%;
+  height:100vh;
+  left:35%;
+  background:#333;
+  overflow:hidden;
+  position:relative;
+  .line{
+    width:4%;
+    height:30vh;
+    background: rgba(255,255,255,0.8);
+    position: absolute;
+    margin-left:48%;
+  }
+  #line-1{
+    top:-150px;
+  }
+  #line-2{
+    top:150px;
+  }
+  #line-3{
+    top:450px;
+  }
+}
+
+//style the car
+onlyPlayer{
+  box-shadow: 3px 3px 3px;
+  animation: blink 3.0s linear infinite;
+  top: 60%;
+  left:60%;
+  background: red;
+  bottom:10px;
+}
+
+allCars{
+  position: relative;
+  width:40px;
+  height:60px;
+  border-radius:5px;
+  .f-glass, .b-glass{
+    width:60%;
+    height:20%;
+    background: #484848;
+    position:absolute;
+    margin-left:20%;
+  }
+  .f-glass{
+    top:15px;
+    border-radius:5px 5px 0 0 ;
+  }
+  .b-glass{
+    bottom:15px;
+    border-radius:0 0 5px 5px  ;
+  }
+  .f-light-l, .f-light-r{
+    position:absolute;
+    width: 20%;
+    height:10%;
+    background:#efefef;
+    top:-6%;
+    margin-left: 10%;
+    border-radius: 5px 5px 0 0;
+  }
+  .f-light-r{
+    margin-left:70%;
+  }
+  .f-tyre-l,.f-tyre-r,.b-tyre-l,.b-tyre-r{
+    position: absolute;
+    height:20%;
+    width:10%;
+    background: grey;
+  }
+
+  .f-tyre-l{
+    top:20%;
+    left:-10%;
+    border-radius: 5px 0 0 5px;
+  }
+  .f-tyre-r{
+    top:20%;
+    left:100%;
+    border-radius: 0 5px 5px 0;
+  }
+  .b-tyre-r{
+    bottom:20%;
+    left:100%;
+    border-radius: 0 5px 5px 0;
+  }
+  .b-tyre-l{
+    bottom:20%;
+    left:-10%;
+    border-radius:5px 0 0 5px ;
+  }
+}
+#car-player{
+  @extend allCars;
+  @extend onlyPlayer;
+}
+
+
+#car-1{
+  @extend allCars;
+  top: -100%;
+  left:20%;
+  background: blue;
+}
+
+#car-2{
+  @extend allCars;
+  top: -200%;
+  left:40%;
+  background: green;
+}
+
+#car-3{
+  @extend allCars;
+  top: -350%;
+  left:45%;
+  background: yellow;
+}
+
+#restart-div{
+  position: absolute;
+  top:0%;
+  left:0;
+  width:100%;
+  height:100vh;
+  background: #292929;
+  line-height:100vh;
+  display:none;
+  #restart{
+    display: block;
+    width:50%;
+    height:80px;
+    background: #8a64ff;
+    color:#fff;
+    font-size: 25px;
+    border:none;
+    outline:none;
+    margin-left: 20%;
+    margin-top: 50%;
+  }
+}
+
