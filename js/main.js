@@ -46,23 +46,22 @@ $(document).ready(function(){
                  //custom animation of a set of css properties. gradually changed
                  carPlayer.animate({
                     left:'-=20px'
-                },30)
+                },20)
              }
              //right arrow press
             }else if(key ===39){
                 if(parseInt(carPlayer.css('left')) < (container_Width-car_Width-20) ){
                     carPlayer.animate({
                         left:'+=20px'
-                    },30)
+                    },20)
                 }
                 //up arrow press
             }else if(key ===38 ){
                 // console.log('up')
                 if(parseInt(carPlayer.css('bottom')) <= (container_Height-car_Height-20) ){
-                    console.log('can move up')
                     carPlayer.animate({
-                        bottom:'+=20px'
-                    },30)
+                        top:'-=20px'
+                    },20)
                 }
                 //down arrow press
             }else if(key ===40){
@@ -70,8 +69,8 @@ $(document).ready(function(){
                 if(parseInt(carPlayer.css('top')) < (container_Height-car_Height-20) ){
                     console.log('can move down')
                     carPlayer.animate({
-                        bottom:'-=20px'
-                    },40)
+                        top:'+=20px'
+                    },20)
                 }
             }else{ //gameOver is true
                 if (key == 13){
@@ -95,7 +94,7 @@ $(document).ready(function(){
                 car_Speed++
                 line_Speed++
             }
-            if(collision(carPlayer,car_1) ||(collision(carPlayer,car_1)) || (collision(carPlayer,car_1))){
+            if(collision(carPlayer,car_1) ||(collision(carPlayer,car_2)) || (collision(carPlayer,car_3))){
                 stopGame()
                 console.log(game_Over)
             }
@@ -106,13 +105,13 @@ $(document).ready(function(){
             lineDown(line_1)
             lineDown(line_2)
             lineDown(line_3)
-            anim_Id = requestAnimationFrame(repeat)
+           anim_Id = requestAnimationFrame(repeat)
         }
     }
     function carDown(random_car){
         let current_Top = parseInt(random_car.css('top'))
 
-        if (current_Top> (container.height+50)){
+        if (current_Top> (container_Height+50)){
             current_Top= -60
             let random_car_Left = Math.floor(Math.random() *(container_Width - car_Width))
             console.log(random_car_Left)
@@ -131,7 +130,7 @@ $(document).ready(function(){
 
     function stopGame(){
         game_Over = true
-        cancelAnimationFrame(anim_Id)
+        cancelAnimationFrame(anim_Id) // stops the animation at the collision
         restart_Div.slideDown()
         restart_Btn.focus()
     }
@@ -141,7 +140,7 @@ $(document).ready(function(){
     })
 
     function collision(firstCar,secondCar){
-        let x1 = firstCar.offset().length
+        let x1 = firstCar.offset().left
         let y1 = firstCar.offset().top
 
         let x2 = secondCar.offset().left
