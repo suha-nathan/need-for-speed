@@ -114,7 +114,7 @@ $(document).ready(function(){
         if (current_Top> (container_Height+50)){
             current_Top= -60
             let random_car_Left = Math.floor(Math.random() *(container_Width - car_Width))
-            console.log(random_car_Left)
+            // console.log(random_car_Left)
             random_car.css('left',random_car_Left)
         }
         random_car.css('top',current_Top+car_Speed)
