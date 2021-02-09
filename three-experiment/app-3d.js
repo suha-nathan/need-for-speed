@@ -7,8 +7,8 @@ let scene; //3d world
 let carRender;
 
 function init(){
-    container = document.querySelector('.scene');
-
+    container = document.querySelector(".container");
+    console.log(container)
     //create the scene
     scene = new THREE.Scene();
 
@@ -19,7 +19,7 @@ function init(){
     const far = 500;
 
     camera = new THREE.PerspectiveCamera(FOV,aspectRatio,near,far);
-    camera.position.set(5,1,5)//sets the camera position in x,y,z(left-right,up-down,depth)
+    camera.position.set(5,0.5,5)//sets the camera position in x,y,z(left-right,up-down,depth)
     camera.rotation.y = 45/180*Math.PI
 
     //setup lighting
@@ -42,15 +42,16 @@ function init(){
     //load model
 
     let loader = new THREE.GLTFLoader();
-    loader.load('./game-assets/scene.gltf',function(gltf){
+    loader.load('./three-experiment/game-assets/scene.gltf',function(gltf){
         //gltf is a super large object with information on the gltf 3d model
         // console.log(gltf);
         // console.log(gltf.scene.position)
-        gltf.scene.position.set(-2,0,0);
+        gltf.scene.position.set(-1.2,-0.7,0.5);
 
         scene.add(gltf.scene); //adding the model to the scene
         carRender = gltf.scene.children[0]; //the actual car object
        // renderer.render(scene,camera) //rendering the scene with teh camera
+        animate()
     });
 
     //add interactivity
@@ -62,9 +63,8 @@ function init(){
         requestAnimationFrame(animate) //recursion
         carRender.rotation.z += 0.005;
         renderer.render(scene,camera);
-        // controls.update();
+
     }
-    animate()
 
 }
 

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="three-experiment/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="scene">
+    <div id= "sideNav" class="controls">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2>Controls</h2>
+        <h3>To Move:</h3>
+        <img src="img/arrow-keys.png" alt="Use up down arrow keys">
+        <h3>To Refresh Game:</h3>
+        <img src="img/enter-key.png" alt="Use enter to refresh">
+        <a href="index.html" class="button">Start Game</a>
+    </div>
+
+
+
+    <div class="container"></div>
+
+    <div class="header"> <div class="title">Need for Speed by Suha </div><span id="openNav" onclick="openNav()">&#9776; Controls</span> </div>
+
+
+
+</div>
+
+
+<script src="three-experiment/three.min.js"></script>
+<script src="three-experiment/GLTFLoader.js"></script>
+
+<!--<script src="three.js\examples\jsm\controls\OrbitControls.js" type = "module"></script>-->
+<script src="three-experiment/app-3d.js" type = "module" ></script>
+
+<!--<footer>Made by Suha</footer>-->
+</body>
+
+<script>
+    function openNav(){
+        document.getElementById("sideNav").style.width = "250px";
+        document.getElementById("openNav").style.display = "none";
+    }
+    function closeNav(){
+        document.getElementById("sideNav").style.width ="0";
+        document.getElementById("openNav").style.display = "inline-block";
+    }
+
+</script>
+
+</html>

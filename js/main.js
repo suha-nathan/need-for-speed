@@ -1,6 +1,4 @@
 
-
-
 //ensures the document loads before the jquery code is run
 $(document).ready(function(){
     "use strict"
@@ -31,56 +29,61 @@ $(document).ready(function(){
 
     let game_Over =false,
         score_Counter = 1,
-        car_Speed = 2,
-        line_Speed = 5;
+        car_Speed = 3,
+        line_Speed = 4;
 
     // Game starts here
 
     $(window).on('keydown',function(e){
-        let key = e.keyCode
+        let key = e.key
         if (game_Over===false){
-            if(key===37){
+            if(key==="ArrowLeft"){ //WRONGGG
              //if left arrow is pressed, we check if car has 20px of space to move to the left
              //if theres space car moves left by 20 px, if not, nth changes
-             if(parseInt(carPlayer.css('right')) < (container_Width-car_Width-20) ){
+             if(parseInt(carPlayer.css('left') ) >10 ){
                  //custom animation of a set of css properties. gradually changed
+                 console.log(carPlayer.css('right'))
+                 console.log((container_Width-car_Width-20))
                  carPlayer.animate({
                     left:'-=20px'
                 },20)
              }
              //right arrow press
-            }else if(key ===39){
+            }else if(key ==="ArrowRight"){
                 if(parseInt(carPlayer.css('left')) < (container_Width-car_Width-20) ){
                     carPlayer.animate({
                         left:'+=20px'
                     },20)
                 }
-                //up arrow press
-            }else if(key ===38 ){
+                //up arrow press WRONNGGG!!
+            }else if(key === "ArrowUp" ){
                 // console.log('up')
-                if(parseInt(carPlayer.css('bottom')) <= (container_Height-car_Height-20) ){
+                if(parseInt(carPlayer.css('top')) >20 ){
                     carPlayer.animate({
                         top:'-=20px'
                     },20)
                 }
                 //down arrow press
-            }else if(key ===40){
+            }else if(key ==="ArrowDown"){
                 // console.log('down')
                 if(parseInt(carPlayer.css('top')) < (container_Height-car_Height-20) ){
-                    console.log('can move down')
                     carPlayer.animate({
                         top:'+=20px'
                     },20)
                 }
             }else{ //gameOver is true
-                if (key == 13){
+                if (key == "Enter"){
                     //pull the document from the web-server again as the document contents
                     // // change dynamically
                     window.location.reload(true)
+                    console.log("enter pressed")
                 }
             }
         }
     });
+
+    //initialise the car player position
+
 
     let anim_Id = requestAnimationFrame(repeat)
     function repeat(){
@@ -108,16 +111,20 @@ $(document).ready(function(){
            anim_Id = requestAnimationFrame(repeat)
         }
     }
-    function carDown(random_car){
+    function carSpawn(random_car){
         let current_Top = parseInt(random_car.css('top'))
 
-        if (current_Top> (container_Height+50)){
-            current_Top= -60
+    }
+    function carDown(random_car){
+        let currentYPos = parseInt(random_car.css('top'))
+        let updateYPos = currentYPos+car_Speed
+        random_car.css('top',updateYPos)
+        if (currentYPos>(container_Height+50)){
             let random_car_Left = Math.floor(Math.random() *(container_Width - car_Width))
-            // console.log(random_car_Left)
             random_car.css('left',random_car_Left)
+            random_car.css('top',-200)
+            console.log(random_car.css('top'))
         }
-        random_car.css('top',current_Top+car_Speed)
     }
 
     function lineDown(line){

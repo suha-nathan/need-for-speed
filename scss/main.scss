@@ -1,17 +1,17 @@
 @import "general";
 @import "colors";
 
-
-
-//.line{
-//  background-color: grey;
-//  height: 100px;
-//  width:20px;
-//}
 @keyframes blink {
-  0% { box-shadow: 0 0 15px red; }
+  0% { box-shadow: 0 0 15px $yellow; }
   50% { box-shadow: none; }
-  100% { box-shadow: 0 0 15px red; }
+  100% { box-shadow: 0 0 15px $yellow; }
+}
+audio{
+  position: absolute;
+  left:0;
+  top:0;
+  width:200px;
+  padding:10px;
 }
 
 #score-div{
@@ -22,7 +22,7 @@
   background-color: white;
   color: #454545;
   padding:15px;
-  box-shadow: 4px 4px 4px 1px #808080;
+  box-shadow: 4px 4px 4px 1px $background;
   p{
     height:20px;
   }
@@ -33,8 +33,8 @@
 .container{
   width:40%;
   height:100vh;
-  left:35%;
-  background:#333;
+  left:30%;
+  background:$road;
   overflow:hidden;
   position:relative;
   .line{
@@ -61,7 +61,6 @@ onlyPlayer{
   animation: blink 3.0s linear infinite;
   top: 60%;
   left:60%;
-  background: red;
   bottom:10px;
 }
 
@@ -128,28 +127,30 @@ allCars{
 #car-player{
   @extend allCars;
   @extend onlyPlayer;
-}
 
+  background:$yellow;
+
+}
 
 #car-1{
   @extend allCars;
   top: -100%;
   left:20%;
-  background: blue;
+  background: $neon-pink;
 }
 
 #car-2{
   @extend allCars;
   top: -200%;
   left:40%;
-  background: green;
+  background: $neon-pink;
 }
 
 #car-3{
   @extend allCars;
   top: -350%;
   left:45%;
-  background: yellow;
+  background:$neon-pink;
 }
 
 #restart-div{
@@ -158,20 +159,31 @@ allCars{
   left:0;
   width:100%;
   height:100vh;
-  background: #292929;
+  background: $restart;
   line-height:100vh;
   display:none;
+
   #restart{
-    display: block;
-    width:50%;
-    height:80px;
-    background: #8a64ff;
-    color:#fff;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    margin-left:30%;
+    width:40%;
+    height:90px;
+    font-weight:bold;
+    border-radius: 10px;
+    box-shadow: 5px 10px red;
+    background: $background;
+    color: #484848;
     font-size: 25px;
     border:none;
     outline:none;
-    margin-left: 20%;
-    margin-top: 50%;
+    cursor: pointer;
+    padding:10px;
+    overflow: hidden;
+    &:hover{
+      color:$white;
+    }
   }
+
 }
 

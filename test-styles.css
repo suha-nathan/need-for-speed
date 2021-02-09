@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    background: lightgrey;
+}
+
+canvas{
+    position:absolute;
+    left:30%;
+    width: 40%;
+    height: 100vh;
+}
+
+#car{
+    position:relative;
+    width:20%;
+    height:20%;
+}
+
