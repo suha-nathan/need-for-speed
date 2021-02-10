@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d404e8b-cd82-4b7c-9f4c-8cc276bf1a16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeedForSpeeed-SEI Project.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/general.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/three-experiment/app-3d.js" beforeDir="false" afterPath="$PROJECT_DIR$/three-experiment/app-3d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/three-experiment/index-3d.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-3d.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/three-experiment/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/three-experiment/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +66,7 @@
       <updated>1612704475146</updated>
       <workItem from="1612704476899" duration="64841000" />
       <workItem from="1612834309228" duration="15902000" />
+      <workItem from="1612921908179" duration="17165000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>need4speed</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div id="score-div">
+            <span> score: </span >
+            <span id="score">0</span>
+        </div>
+<!--start to make the road-->
+        <div class="line" id="line-1"> </div>
+        <div class="line" id="line-2"> </div>
+        <div class="line" id="line-3"> </div>
+
+
+        <div class="car" id ="car-player">
+            <!-- car elements   -->
+            <div class="f-glass"></div>
+            <div class="f-light-l"></div>
+            <div class="f-light-r"></div>
+            <div class="f-tyre-l"></div>
+            <div class="f-tyre-r"></div>
+            <div class="b-tyre-l"></div>
+            <div class="b-tyre-r"></div>
+            <div class="b-glass"></div>
+        </div>
+
+
+        <div class="car" id ="car-1">
+            <!-- car elements   -->
+            <div class="f-glass"></div>
+            <div class="f-light-l"></div>
+            <div class="f-light-r"></div>
+            <div class="f-tyre-l"></div>
+            <div class="f-tyre-r"></div>
+            <div class="b-tyre-l"></div>
+            <div class="b-tyre-r"></div>
+            <div class="b-glass"></div>
+        </div>
+
+        <div class="car" id ="car-2">
+            <!-- car elements   -->
+            <div class="f-glass"></div>
+            <div class="f-light-l"></div>
+            <div class="f-light-r"></div>
+            <div class="f-tyre-l"></div>
+            <div class="f-tyre-r"></div>
+            <div class="b-tyre-l"></div>
+            <div class="b-tyre-r"></div>
+            <div class="b-glass"></div>
+        </div>
+
+        <div class="car" id ="car-3">
+            <!-- car elements   -->
+            <div class="f-glass"></div>
+            <div class="f-light-l"></div>
+            <div class="f-light-r"></div>
+            <div class="f-tyre-l"></div>
+            <div class="f-tyre-r"></div>
+            <div class="b-tyre-l"></div>
+            <div class="b-tyre-r"></div>
+            <div class="b-glass"></div>
+        </div>
+
+<!--        restart the game button-->
+        <div id="restart-div">
+            <button id="restart">
+                Click to Restart
+            </button>
+        </div>
+
+    </div>
+
+    <audio controls  src="img/TokyoDrift.mp3" type="audio/mpeg" autoplay>
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

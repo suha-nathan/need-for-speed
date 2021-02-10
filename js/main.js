@@ -27,13 +27,16 @@ $(document).ready(function(){
         car_Width = parseInt(carPlayer.css('width')),
         car_Height = parseInt(carPlayer.css('height'));
 
-    let game_Over =false,
+    let game_Over = false,
         score_Counter = 1,
         car_Speed = 3,
-        line_Speed = 4;
+        line_Speed = 4,
+        counter=0;
 
     // Game starts here
-
+    restart_Div.click(function(){
+        window.location.reload(true)
+    })
     $(window).on('keydown',function(e){
         let key = e.key
         if (game_Over===false){
@@ -42,8 +45,8 @@ $(document).ready(function(){
              //if theres space car moves left by 20 px, if not, nth changes
              if(parseInt(carPlayer.css('left') ) >10 ){
                  //custom animation of a set of css properties. gradually changed
-                 console.log(carPlayer.css('right'))
-                 console.log((container_Width-car_Width-20))
+                 // console.log(carPlayer.css('right'))
+                 // console.log((container_Width-car_Width-20))
                  carPlayer.animate({
                     left:'-=20px'
                 },20)
@@ -76,7 +79,7 @@ $(document).ready(function(){
                     //pull the document from the web-server again as the document contents
                     // // change dynamically
                     window.location.reload(true)
-                    console.log("enter pressed")
+                    // console.log("enter pressed")
                 }
             }
         }
@@ -101,9 +104,14 @@ $(document).ready(function(){
                 stopGame()
                 console.log(game_Over)
             }
-            carDown(car_1)
-            carDown(car_2)
-            carDown(car_3)
+
+            let randomXArray = randomXPos()
+            console.log(randomXArray)
+
+            carDown(car_1,randomXArray[0])
+            carDown(car_2,randomXArray[1])
+            carDown(car_3,randomXArray[2])
+
 
             lineDown(line_1)
             lineDown(line_2)
@@ -111,19 +119,26 @@ $(document).ready(function(){
            anim_Id = requestAnimationFrame(repeat)
         }
     }
-    function carSpawn(random_car){
-        let current_Top = parseInt(random_car.css('top'))
 
+    function randomXPos() { //ensures no 2 cars overlap
+        let arr = []
+        arr[0] = Math.floor(Math.random() * (container_Width - car_Width-100))
+        arr[1] = arr[0]+50
+        arr[2] = arr[0]-50
+        return arr //array of 3 X Positions that are not the same
     }
-    function carDown(random_car){
+
+    function carDown(random_car,x){
+        //pulls the car element down
         let currentYPos = parseInt(random_car.css('top'))
         let updateYPos = currentYPos+car_Speed
         random_car.css('top',updateYPos)
+
+        //checks if the car element is out of the frame,
+        // pulls it back to the top & changes the x position of the car
         if (currentYPos>(container_Height+50)){
-            let random_car_Left = Math.floor(Math.random() *(container_Width - car_Width))
-            random_car.css('left',random_car_Left)
+            random_car.css('left',x)
             random_car.css('top',-200)
-            console.log(random_car.css('top'))
         }
     }
 
@@ -138,13 +153,11 @@ $(document).ready(function(){
     function stopGame(){
         game_Over = true
         cancelAnimationFrame(anim_Id) // stops the animation at the collision
+        //slideDown() works on elements hidden with jQuery methods and
+        // display:none in CSS (but not visibility:hidden)
         restart_Div.slideDown()
         restart_Btn.focus()
     }
-
-    restart_Div.click(function(){
-        window.location.reload(true)
-    })
 
     function collision(firstCar,secondCar){
         let x1 = firstCar.offset().left
