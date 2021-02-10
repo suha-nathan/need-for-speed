@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7d404e8b-cd82-4b7c-9f4c-8cc276bf1a16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeedForSpeeed-SEI Project.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-game.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/three-experiment/app-3d.js" beforeDir="false" afterPath="$PROJECT_DIR$/three-experiment/app-3d.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +50,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Suha\projects\sei-project1" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Suha\projects\sei-project1" />
       <recent name="C:\Users\Suha\projects\sei-project1\img" />
@@ -66,7 +74,7 @@
       <updated>1612704475146</updated>
       <workItem from="1612704476899" duration="64841000" />
       <workItem from="1612834309228" duration="15902000" />
-      <workItem from="1612921908179" duration="17165000" />
+      <workItem from="1612921908179" duration="22228000" />
     </task>
     <servers />
   </component>

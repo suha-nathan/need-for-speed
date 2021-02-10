@@ -14,6 +14,7 @@ $(document).ready(function(){
         car_1 = $('#car-1'),
         car_2 = $('#car-2'),
         car_3 = $('#car-3'),
+        car_4 = $('#car-4'),
         restart_Div =$("#restart-div"),
         restart_Btn =$("#restart"),
         score =$("#score");
@@ -25,12 +26,15 @@ $(document).ready(function(){
         container_Width = parseInt(container.css('width')),
         container_Height = parseInt(container.css('height')),
         car_Width = parseInt(carPlayer.css('width')),
-        car_Height = parseInt(carPlayer.css('height'));
+        car_Height = parseInt(carPlayer.css('height')),
+        line_height = parseInt(line_1.css('height'));
+
+    console.log(container_Height)
 
     let game_Over = false,
         score_Counter = 1,
-        car_Speed = 3,
-        line_Speed = 4,
+        car_Speed = 1,
+        line_Speed = 5,
         counter=0;
 
     // Game starts here
@@ -45,8 +49,7 @@ $(document).ready(function(){
              //if theres space car moves left by 20 px, if not, nth changes
              if(parseInt(carPlayer.css('left') ) >10 ){
                  //custom animation of a set of css properties. gradually changed
-                 // console.log(carPlayer.css('right'))
-                 // console.log((container_Width-car_Width-20))
+
                  carPlayer.animate({
                     left:'-=20px'
                 },20)
@@ -79,14 +82,12 @@ $(document).ready(function(){
                     //pull the document from the web-server again as the document contents
                     // // change dynamically
                     window.location.reload(true)
-                    // console.log("enter pressed")
                 }
             }
         }
     });
 
     //initialise the car player position
-
 
     let anim_Id = requestAnimationFrame(repeat)
     function repeat(){
@@ -102,15 +103,16 @@ $(document).ready(function(){
             }
             if(collision(carPlayer,car_1) ||(collision(carPlayer,car_2)) || (collision(carPlayer,car_3))){
                 stopGame()
-                console.log(game_Over)
             }
 
             let randomXArray = randomXPos()
-            console.log(randomXArray)
+            // console.log(randomXArray)
+            let randomYArray = randomYPos()
 
-            carDown(car_1,randomXArray[0])
-            carDown(car_2,randomXArray[1])
-            carDown(car_3,randomXArray[2])
+            carDown(car_1,randomXArray[0], randomYArray[0])
+            carDown(car_2,randomXArray[1], randomYArray[1])
+            carDown(car_3,randomXArray[2], randomYArray[2])
+            carDown(car_4,randomXArray[3], randomYArray[3])
 
 
             lineDown(line_1)
@@ -120,15 +122,25 @@ $(document).ready(function(){
         }
     }
 
-    function randomXPos() { //ensures no 2 cars overlap
+    function randomXPos() {
         let arr = []
-        arr[0] = Math.floor(Math.random() * (container_Width - car_Width-100))
-        arr[1] = arr[0]+50
-        arr[2] = arr[0]-50
-        return arr //array of 3 X Positions that are not the same
+        arr.push(Math.floor(Math.random() * ((container_Width - car_Width)/4) ) )
+        arr.push(Math.floor(Math.random() * ((container_Width - car_Width)/4) ) + ((container_Width - car_Width)/4) )
+        arr.push(Math.floor(Math.random() * ((container_Width - car_Width)/4) ) + ((container_Width - car_Width)/2) )
+        arr.push(Math.floor(Math.random() * ((container_Width - car_Width)/4) ) + (3*(container_Width - car_Width)/4) )
+        return arr //array of 4 X Positions that are not the same/ in 4 separate zones ~mostly
     }
 
-    function carDown(random_car,x){
+    function randomYPos(){
+        let arr = []
+        arr.push(Math.floor(Math.random()* 100))
+        arr.push(Math.ceil(Math.random()* 100))
+        arr.push(Math.floor(Math.random()* 100))
+        arr.push(Math.ceil(Math.random()* 100))
+        return arr
+    }
+
+    function carDown(random_car,x,y){
         //pulls the car element down
         let currentYPos = parseInt(random_car.css('top'))
         let updateYPos = currentYPos+car_Speed
@@ -138,14 +150,14 @@ $(document).ready(function(){
         // pulls it back to the top & changes the x position of the car
         if (currentYPos>(container_Height+50)){
             random_car.css('left',x)
-            random_car.css('top',-200)
+            random_car.css('top',-200-y)
         }
     }
 
     function lineDown(line){
         let line_current_top = parseInt(line.css('top'))
-        if(line_current_top > (container_Height +150)){
-            line_current_top = -300
+        if(line_current_top > (container_Height)){
+            line_current_top = -line_height
         }
         line.css('top',line_current_top + line_Speed)
     }

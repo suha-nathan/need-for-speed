@@ -8,7 +8,7 @@ let carRender;
 
 function init(){
     container = document.querySelector(".container");
-    console.log(container)
+
     //create the scene
     scene = new THREE.Scene();
 
@@ -23,7 +23,6 @@ function init(){
     camera.rotation.y = 45/180*Math.PI
 
     //setup lighting
-
     const ambient = new THREE.AmbientLight(0x404040,6) ;
     scene.add(ambient);
 
@@ -32,7 +31,6 @@ function init(){
     scene.add(light)
 
     //render setup
-
     renderer = new THREE.WebGLRenderer({antialias:true, alpha: true}) //antialias makes the edges of the 3d model not so jagged
     renderer.setSize(container.clientWidth, container.clientHeight)
     renderer.setPixelRatio(window.devicePixelRatio)
@@ -68,6 +66,15 @@ function init(){
 
 }
 
+function openNav(){
+    document.getElementById("sideNav").style.width = "250px";
+    document.getElementById("openNav").style.display = "none";
+}
+function closeNav(){
+    document.getElementById("sideNav").style.width ="0";
+    document.getElementById("openNav").style.display = "inline-block";
+}
+
 function onWindowResize(){
     camera.aspect = container.clientWidth/ container.clientHeight;
     camera.updateProjectionMatrix();
@@ -75,6 +82,8 @@ function onWindowResize(){
     //updates camera and renderer on window event - resize
 }
 
+document.querySelector('#openNav').addEventListener('click',openNav)
+document.querySelector('.closebtn').addEventListener('click',closeNav)
 window.addEventListener('resize',onWindowResize)
 init()
 
