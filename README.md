@@ -17,7 +17,7 @@ Unsolved problems:
 There were a few different approaches I was evaluating to build the 2D game.
 1. Using SCSS and jQuery to animate individual css elements. Movement of the CSS element is slightly choppy
   
-2. Using canvas and the draw rectangles and images. Movement is smoother than using CSS. However, drawing and resizing images in `<canvas>` decreases the quality of the image. 
+2. Using vanilla JS `<canvas>` to draw rectangles and images. Movement is smoother than using CSS. However, drawing and resizing images in `<canvas>` decreases the quality of the image. 
   
 3. Using SVG.js. Work In Progress. Didn't manage to thoroughly explore this route due to time constraints. 
 
@@ -32,4 +32,5 @@ Unsolved Problems:
 
 
 ** All animations including the 3D model rotation and 2D game was done using the `requestAnimationFrame` function in Javascript.
+
 
