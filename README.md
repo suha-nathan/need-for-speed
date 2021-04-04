@@ -10,7 +10,7 @@ The landing page that takes you to the initial game was built with three.js with
 
 Unsolved problems:
 - Figuring out how to use Orbital Controls within three.js to make the scene interactive
-- Not all 3D models are created equal, some models dont render and I dont yet understand why.
+- Not all 3D models are created equal, some 3D model file types dont render. 
 
 ## 2D Racing Game
 
