@@ -1,6 +1,6 @@
 # Need for Speed
 
-![image](https://s3.gifyu.com/images/need-for-speedb63bc08d1f0011e5.gif)
+![image](https://github.com/suha-nathan/need-for-speed/blob/master/img/need-for-speed.gif)
 
 Used Javascript, HTML, CSS and SCSS to create a game inspired by racing pop-culture.
 
