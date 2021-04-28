@@ -1,5 +1,7 @@
 # Need for Speed
 
+![image](https://user-images.githubusercontent.com/77837569/116346701-55af4580-a81d-11eb-9ab7-f174d6b241ce.png)
+
 Used Javascript, HTML, CSS and SCSS to create a game inspired by racing pop-culture.
 
 The project is split into 2 - where the first is the 3D visuals and the second is the 2D game. 
